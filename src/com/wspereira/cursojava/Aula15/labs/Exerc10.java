@@ -16,11 +16,14 @@ public class Exerc10 {
 		System.out.println("Digite dois números diferentes");
 		int n1 = sc.nextInt();
 		int n2 = sc.nextInt();
+		int soma = 0;
 		
 		for(int x = n1; x <= n2; x++) {
 			
 			System.out.println(x);
+			soma += x;
 		}
+		System.out.println("Soma " + soma);
 		sc.close();
 		
 	}
