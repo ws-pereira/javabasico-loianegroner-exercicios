@@ -9,12 +9,18 @@ public class Exerc09 {
 
 	public static void main(String[] args) {
 		
+		int contPares = 0;
+		
 		for(int x = 1; x <=50; x++) {
 			if(x % 2 != 0) {
 				System.out.print(x + " ");
 			}
+			else { 
+				contPares++;
+			}
 		}
-		
+		System.out.println();
+		System.out.println("\nQuantidade de números pares " + contPares);
 		
 	}
 
