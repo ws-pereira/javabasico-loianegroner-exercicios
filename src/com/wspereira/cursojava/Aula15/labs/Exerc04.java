@@ -5,24 +5,60 @@
 
 package com.wspereira.cursojava.Aula15.labs;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Exerc04 {
 
 	public static void main(String[] args) {
 		
-		int paisA = 80000;    // Taxa anual de crescimento de 3%
-		int paisB = 200000;   // Taxa anual de crescimento de 1.5%
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
 		
-		int ano = 0;          // Calcular quanto tempo A será maior que B
+		int ano = 0;
+		double popA, popB, taxaA, taxaB;
+		boolean valida = false;
 		
+		// Inserindo e validando dados da população
 		do {
-			paisA += paisA * 0.03;
-			paisB += paisB * 0.015;
-			ano++;
-		}while(paisA < paisB);
+			System.out.print("População A e População B - ");
+			popA = sc.nextDouble();
+			popB = sc.nextDouble();
+			
+			if(popA > 0 && popB > 0) {
+				valida = true;
+			}
+			else{
+				System.out.println("Valores devem ser maiores que zero\n");
+			}
+		}while(!valida);
 		
-		System.out.println("País A - "+ paisA);
-		System.out.println("País B - "+ paisB);
-		System.out.println(ano);
+		valida = false;
+		do {
+			System.out.println("Taxa de crescimento de A e B");
+			taxaA = sc.nextDouble();
+			taxaB = sc.nextDouble();
+			if(taxaA > 0 && taxaB > 0) {
+				valida = true;
+			}
+			else {
+				System.out.println("Valores da taxa incorreto");
+			}
+		}while(!valida);
+		
+		valida = false;
+		while(popA < popB) {
+			
+			popA += popA * (taxaA / 100);
+			popB += popB * (taxaB / 100);
+			ano++;
+			
+		}
+		
+		System.out.println("População A - " + popA);
+		System.out.println("População B - " + popB);
+		System.out.println("Anos - " + ano);
+		sc.close();
 	}
 
 }
