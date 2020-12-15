@@ -1,6 +1,6 @@
 /* Autor: Wanderson Pereira
  * Exercícios curso Java Básico - Instrutora Loiane Groner
- * Trabalhando com loop - apresentar o valor de 1 até 50, a partir de um preço
+ * Trabalhando com loop - exemplo de caixa registradora
  */
 
 package com.wspereira.cursojava.Aula15.labs;
